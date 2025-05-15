@@ -36,7 +36,7 @@ import java.net.http.HttpResponse;
  */
 @Controller
 @RequestMapping("/user")
-public class        UserController implements CommunityConstant {
+public class UserController implements CommunityConstant {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
@@ -91,7 +91,7 @@ public class        UserController implements CommunityConstant {
 
     @RequestMapping(path = "/header/url", method = RequestMethod.POST)
     @ResponseBody
-    public String updateHeaderUrl(String fileName){
+    public String updateHeaderUrl(String fileName) {
         if (StringUtils.isBlank(fileName)) {
             return CommunityUtil.getJSONString(1, "文件名不能为空");
         }
@@ -139,7 +139,7 @@ public class        UserController implements CommunityConstant {
 
     @RequestMapping(path = "/header/{fileName}", method = RequestMethod.GET)
     public void getHeader(@PathVariable("fileName") String filename, HttpServletResponse response) {
-        logger.info("fileName:"  + filename);
+        logger.info("fileName:" + filename);
         filename = uploadPath + "/" + filename;
         String suffix = filename.substring(filename.lastIndexOf("."));
         response.setContentType("image/jpg" + suffix);
@@ -160,7 +160,7 @@ public class        UserController implements CommunityConstant {
 
     // 个人主页
     @RequestMapping(path = "/profile/{userId}", method = RequestMethod.GET)
-    public String getProfilePage(@PathVariable("userId") int userId, Model model){
+    public String getProfilePage(@PathVariable("userId") int userId, Model model) {
         // 该用户的信息
         User user = userService.findUserById(userId);
 

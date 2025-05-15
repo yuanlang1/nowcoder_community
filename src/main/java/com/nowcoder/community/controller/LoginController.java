@@ -47,7 +47,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2025-04-22 13:16
  */
 @Controller
-public class LoginController implements CommunityConstant {
+public class    LoginController implements CommunityConstant {
     @Autowired
     private UserService userService;
 
